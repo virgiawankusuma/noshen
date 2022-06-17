@@ -2,7 +2,7 @@ import React from 'react';
 
 import AppItem from './AppItem';
 
-const AppList = ({ notes, onDelete, onArchive }) => {
+const AppList = ({ notes, onDelete, onArchive, onUnarchive }) => {
   return (
     <div className="noshen-list">
       {
@@ -12,6 +12,7 @@ const AppList = ({ notes, onDelete, onArchive }) => {
           id={note.id}
           onDelete={onDelete}
           onArchive={onArchive}
+          onUnarchive={onUnarchive}
           {...note} />
         ))
       }

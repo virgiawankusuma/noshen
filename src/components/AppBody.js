@@ -67,10 +67,15 @@ class AppBody extends React.Component {
         <AppInput onAdd={this.onAddHandler}/>
 
         <h2>Active Notes</h2>
-        <AppList notes={this.state.notes} onDelete={this.onDeleteHandler} onArchive={this.onArchiveHandler} />
+        <AppList notes=
+        {this.state.notes.filter(note => note.archived === false)} 
+        onDelete={this.onDeleteHandler} 
+        onArchive={this.onArchiveHandler} />
 
         <h2>Archive Notes</h2>
-        <AppList notes={this.state.notes} onDelete={this.onDeleteHandler} onUnarchive={this.onUnarchiveHandler} />
+        <AppList notes=
+        {this.state.notes.filter(note => note.archived)} onDelete={this.onDeleteHandler} 
+        onUnarchive={this.onUnarchiveHandler} />
       </div>
     );
   }

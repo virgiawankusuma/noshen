@@ -4,8 +4,9 @@ import NoshenHeader from './NoshenHeader';
 import NoshenBody from './NoshenBody';
 import NoshenDeleteButton from './NoshenDeleteButton';
 import NoshenArchiveButton from './NoshenArchiveButton';
+import NoshenUnarchiveButton from './NoshenUnarchiveButton';
 
-const NoshenItem = ({ id, title, body, createdAt, onDelete, onArchive }) => {
+const NoshenItem = ({ id, title, body, createdAt, archived, onDelete, onArchive, onUnarchive }) => {
   return (
     <div className="noshen-item">
       <div className="noshen-item__content">
@@ -14,7 +15,7 @@ const NoshenItem = ({ id, title, body, createdAt, onDelete, onArchive }) => {
       </div>
       <div className="noshen-item__action">
         <NoshenDeleteButton id={id} onDelete={onDelete} />
-        <NoshenArchiveButton id={id} onArchive={onArchive} />
+        {archived ? <NoshenUnarchiveButton id={id} onUnarchive={onUnarchive} /> : <NoshenArchiveButton id={id} onArchive={onArchive} />}
       </div>
     </div>
   );

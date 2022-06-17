@@ -16,6 +16,7 @@ class AppBody extends React.Component {
     this.onAddHandler = this.onAddHandler.bind(this);
     this.onDeleteHandler = this.onDeleteHandler.bind(this);
     this.onArchiveHandler = this.onArchiveHandler.bind(this);
+    this.onUnarchiveHandler = this.onUnarchiveHandler.bind(this);
   }
 
   onAddHandler ( {title, body} ) {
@@ -50,6 +51,16 @@ class AppBody extends React.Component {
     this.setState({ notes });
   }
 
+  onUnarchiveHandler (id) {
+    const notes = this.state.notes.map(note => {
+      if (note.id === id) {
+        note.archived = false;
+      }
+      return note;
+    });
+    this.setState({ notes });
+  }
+
   render() {
     return (
       <div className="noshen-app__body">
@@ -57,8 +68,9 @@ class AppBody extends React.Component {
 
         <h2>Active Notes</h2>
         <AppList notes={this.state.notes} onDelete={this.onDeleteHandler} onArchive={this.onArchiveHandler} />
-        
+
         <h2>Archive Notes</h2>
+        <AppList notes={this.state.notes} onDelete={this.onDeleteHandler} onUnarchive={this.onUnarchiveHandler} />
       </div>
     );
   }

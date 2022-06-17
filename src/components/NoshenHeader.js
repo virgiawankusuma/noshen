@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { showFormattedDate } from '../utils/index';
+
 const NoshenHeader = ({ title, createdAt }) => {
   return (
     <>
       <h3 className="noshen-item__title">{title}</h3>
-      <p className="noshen-item__date">{createdAt}</p>
+      <p className="noshen-item__date">{showFormattedDate(createdAt)}</p>
     </>
   );
 }

@@ -6,7 +6,7 @@ class AppInput extends React.Component {
 
       this.state = {
         title: '',
-        content: '',
+        body: '',
       }
 
       this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -27,7 +27,7 @@ class AppInput extends React.Component {
       this.setState((prevState) => {
         return {
           ...prevState,
-          content: event.target.value,
+          body: event.target.value,
         }
       });
     }
@@ -44,7 +44,7 @@ class AppInput extends React.Component {
         <form className="contact-input" onSubmit={this.onSubmitEventHandler}>
           <p className="noshen-input__title__char-limit">Sisa karakter: </p>
           <input className="noshen-input__title" type="text" placeholder="Title.." required value={this.state.title} onChange={this.onTitleChangeEventHandler}></input>
-          <textarea className="noshen-input__body" type="text" placeholder="Content.." required spellCheck="false" defaultValue={this.state.content} onChange={this.onContentChangeEventHandler}></textarea>
+          <textarea className="noshen-input__body" type="text" placeholder="Content.." required spellCheck="false" defaultValue={this.state.body} onChange={this.onContentChangeEventHandler}></textarea>
           <button type="submit">Create</button>
         </form>
       </div>

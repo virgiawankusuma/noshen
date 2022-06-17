@@ -41,8 +41,8 @@ class AppInput extends React.Component {
     return (
       <div className="noshen-input">
         <h2>Add Note</h2>
-        <form classTitle="contact-input" onSubmit={this.onSubmitEventHandler}>
-          <p class="noshen-input__title__char-limit">Sisa karakter: </p>
+        <form className="contact-input" onSubmit={this.onSubmitEventHandler}>
+          <p className="noshen-input__title__char-limit">Sisa karakter: </p>
           <input className="noshen-input__title" type="text" placeholder="Title.." required value={this.state.title} onChange={this.onTitleChangeEventHandler}></input>
           <textarea className="noshen-input__body" type="text" placeholder="Content.." required value={this.state.content} onChange={this.onContentChangeEventHandler}></textarea>
           <button type="submit">Create</button>

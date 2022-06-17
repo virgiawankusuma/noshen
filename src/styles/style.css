@@ -89,7 +89,7 @@ input::placeholder, textarea::placeholder {
   cursor: pointer;
 }
 
-.noshens-list {
+.noshen-list {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(min-content, max-content);
@@ -97,7 +97,7 @@ input::placeholder, textarea::placeholder {
   margin-bottom: 48px;
 }
 
-.noshens-list__empty-message {
+.noshen-list__empty-message {
   text-align: center;
   color: #aaa;
 }
@@ -166,13 +166,13 @@ input::placeholder, textarea::placeholder {
 }
 
 @media only screen and (min-width: 500px) {
-  .noshens-list {
+  .noshen-list {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (min-width: 800px) {
-  .noshens-list {
+  .noshen-list {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -182,7 +182,7 @@ input::placeholder, textarea::placeholder {
 }
 
 @media only screen and (min-width: 800px) {
-  .noshens-list {
+  .noshen-list {
     grid-template-columns: repeat(4, 1fr);
   }
 }

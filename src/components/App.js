@@ -2,6 +2,7 @@ import React from 'react';
 import { getInitialData } from '../utils/index';
 
 import AppHeader from './AppHeader';
+import AppBody from './AppBody';
 
 class App extends React.Component {
   constructor (props) {
@@ -13,7 +14,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <AppHeader />
+      <>
+        <AppHeader />
+        <AppBody />
+      </>
     );
   }
 

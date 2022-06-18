@@ -21,7 +21,7 @@ class AppInput extends React.Component {
         return {
           ...prevState,
           title: inputValue,
-          wordCount: this.maxLength - inputValue.length, 
+          inputLength: inputValue.length, 
         }
       });
     }
@@ -45,7 +45,7 @@ class AppInput extends React.Component {
       <div className="noshen-input">
         <h2>Add Note</h2>
         <form className="contact-input" onSubmit={this.onSubmitEventHandler}>
-          <p className="noshen-input__title__char-limit" >Sisa karakter: {this.state.inputLength ? this.state.wordCount : this.maxLength}</p>
+          <p className="noshen-input__title__char-limit" >Sisa karakter: {this.state.inputLength ? this.maxLength - this.state.inputLength : this.maxLength}</p>
           <input className="noshen-input__title" type="text" placeholder="Title.." required value={this.state.title} onChange={this.onTitleChangeEventHandler}></input>
           <textarea className="noshen-input__body" type="text" placeholder="Content.." required spellCheck="false" defaultValue={this.state.body} onChange={this.onContentChangeEventHandler}></textarea>
           <button type="submit">Create</button>

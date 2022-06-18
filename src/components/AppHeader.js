@@ -1,11 +1,11 @@
 import React from 'react';
 import AppSearch from './AppSearch';
 
-function AppHeader() {
+function AppHeader({ onSearch }) {
   return (
     <div className="noshen-app__header">
       <h1>Noshen</h1>
-      <AppSearch />
+      <AppSearch onSearch={onSearch} />
     </div>
   );
 }

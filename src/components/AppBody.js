@@ -68,6 +68,7 @@ class AppBody extends React.Component {
           notes={this.state.notes.filter((note) => note.archived === false)}
           onDelete={this.onDeleteHandler}
           onArchive={this.onArchiveHandler}
+          keyword={this.props.keyword}
         />
 
         <h2>Archive Notes</h2>
@@ -75,6 +76,7 @@ class AppBody extends React.Component {
           notes={this.state.notes.filter((note) => note.archived)}
           onDelete={this.onDeleteHandler}
           onUnarchive={this.onUnarchiveHandler}
+          keyword={this.props.keyword}
         />
       </div>
     );

@@ -3,14 +3,11 @@ import React from 'react';
 class AppSearch extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      keyword: '',
-    };
     this.onSearchHandler = this.onSearchHandler.bind(this);
   }
 
-  onSearchHandler(event) {
-    this.setState({ keyword: event.target.value });
+  onSearchHandler({ target }) {
+    this.props.onSearch(target.value);
   }
 
   render() {
@@ -19,7 +16,6 @@ class AppSearch extends React.Component {
         <input
           type="search"
           placeholder="Search.."
-          value={this.state.keyword}
           onChange={this.onSearchHandler}
         />
       </div>

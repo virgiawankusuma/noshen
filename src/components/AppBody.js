@@ -4,6 +4,7 @@ import { getInitialData } from '../utils/index';
 
 import AppInput from './AppInput';
 import AppList from './AppList';
+import AppEmpty from './AppEmpty';
 
 class AppBody extends React.Component {
   constructor(props) {
@@ -62,22 +63,30 @@ class AppBody extends React.Component {
     return (
       <div className="noshen-app__body">
         <AppInput onAdd={this.onAddHandler} />
-
         <h2>Active Notes</h2>
-        <AppList
-          notes={this.state.notes.filter((note) => note.archived === false)}
-          onDelete={this.onDeleteHandler}
-          onArchive={this.onArchiveHandler}
-          keyword={this.props.keyword}
-        />
+        {this.state.notes.length ? (
+          <AppList
+            notes={this.state.notes.filter((note) => note.archived === false)}
+            onDelete={this.onDeleteHandler}
+            onArchive={this.onArchiveHandler}
+            keyword={this.props.keyword}
+          />
+        ) : (
+          <AppEmpty />
+        )}
 
         <h2>Archive Notes</h2>
-        <AppList
-          notes={this.state.notes.filter((note) => note.archived)}
-          onDelete={this.onDeleteHandler}
-          onUnarchive={this.onUnarchiveHandler}
-          keyword={this.props.keyword}
-        />
+        {this.state.notes.length ? (
+          <AppList
+            notes={this.state.notes.filter((note) => note.archived)}
+            onDelete={this.onDeleteHandler}
+            onUnarchive={this.onUnarchiveHandler}
+            keyword={this.props.keyword}
+          />
+        )
+          : (
+            <AppEmpty />
+          )}
       </div>
     );
   }

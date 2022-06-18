@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NoshenBody = ({ body }) => {
+function NoshenBody({ body }) {
   return (
     <p className="noshen-item__body">
       {body}

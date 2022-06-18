@@ -1,7 +1,7 @@
 import React from 'react';
 import AppSearch from './AppSearch';
 
-const AppHeader = () => {
+function AppHeader() {
   return (
     <div className="noshen-app__header">
       <h1>Noshen</h1>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { showFormattedDate } from '../utils/index';
 
-const NoshenHeader = ({ title, createdAt }) => {
+function NoshenHeader({ title, createdAt }) {
   return (
     <>
       <h3 className="noshen-item__title">{title}</h3>

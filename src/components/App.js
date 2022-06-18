@@ -3,7 +3,7 @@ import React from 'react';
 import AppHeader from './AppHeader';
 import AppBody from './AppBody';
 
-const App = () => {
+function App() {
   return (
     <>
       <AppHeader />

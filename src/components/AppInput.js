@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 class AppInput extends React.Component {
   constructor(props) {
@@ -33,7 +34,22 @@ class AppInput extends React.Component {
 
   onSubmitEventHandler(event) {
     event.preventDefault();
-    this.props.onAdd(this.state);
+    if (this.state.title.length && this.state.body.length) {
+      this.props.onAdd(this.state);
+      Swal.fire({
+        title: 'Success!',
+        text: 'Note created!',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+      });
+    } else {
+      Swal.fire({
+        title: 'Oops...',
+        text: 'Title dan Content harus diisi',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
+    }
   }
 
   render() {
@@ -53,7 +69,7 @@ class AppInput extends React.Component {
             className="noshen-input__title"
             type="text"
             placeholder="Title.."
-            required
+            // required
             value={this.state.title}
             onChange={this.onTitleChangeEventHandler}
           />
@@ -61,7 +77,7 @@ class AppInput extends React.Component {
             className="noshen-input__body"
             type="text"
             placeholder="Content.."
-            required
+            // required
             spellCheck="false"
             defaultValue={this.state.body}
             onChange={this.onContentChangeEventHandler}

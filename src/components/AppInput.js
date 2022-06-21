@@ -45,7 +45,7 @@ class AppInput extends React.Component {
     } else {
       Swal.fire({
         title: 'Oops...',
-        text: 'Title dan Content harus diisi',
+        text: 'Title and Content are required!',
         icon: 'error',
         confirmButtonText: 'Ok',
       });

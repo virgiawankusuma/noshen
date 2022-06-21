@@ -1,4 +1,5 @@
 import React from 'react';
+import autoBindReact from 'auto-bind/react';
 
 import { getInitialData } from '../utils/index';
 
@@ -12,11 +13,7 @@ class AppBody extends React.Component {
     this.state = {
       notes: getInitialData(),
     };
-
-    this.onAddHandler = this.onAddHandler.bind(this);
-    this.onDeleteHandler = this.onDeleteHandler.bind(this);
-    this.onArchiveHandler = this.onArchiveHandler.bind(this);
-    this.onUnarchiveHandler = this.onUnarchiveHandler.bind(this);
+    autoBindReact(this);
   }
 
   onAddHandler({ title, body }) {
